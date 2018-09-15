@@ -25,7 +25,7 @@ SECRET_KEY = 'fera!*z6w$aj0-g21gmi=2(tr!i^wo58ed$kchk(=_6ji07c$x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
