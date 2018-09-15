@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
 # Create your models here.
@@ -25,3 +26,16 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class MyUser(AbstractUser):
+    identifier = models.CharField(max_length=40, unique=True)
+
+    USERNAME_FIELD = 'identifier'
+
+    class Meta:
+        db_table = 'Myuser'
+
+    def __str__(self):
+        return self.USERNAME_FIELD
+

@@ -125,3 +125,6 @@ STATIC_URL = '/polls/static/startbootstrap-clean-blog-gh-pages/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "polls/static/startbootstrap-clean-blog-gh-pages"),
 ]
+
+
+AUTH_USER_MODEL = 'polls.MyUser'
