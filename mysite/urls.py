@@ -21,7 +21,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.index),
+    path('', include('polls.urls')),
     path('admin/', admin.site.urls),
-    path('about.html/', views.about, name="about"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
