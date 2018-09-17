@@ -25,19 +25,19 @@ SECRET_KEY = 'fera!*z6w$aj0-g21gmi=2(tr!i^wo58ed$kchk(=_6ji07c$x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']  # '*'：允许所有主机访问
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'polls',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin',  # The admin site. 管理员站点
+    'django.contrib.auth',  # An authentication system. 认证授权系统。
+    'django.contrib.contenttypes',  # A framework for content types. 内容类型框架。
+    'django.contrib.sessions',  # A session framework. 会话框架。
+    'django.contrib.messages',  # A messaging framework. 消息框架。
+    'django.contrib.staticfiles',  # A framework for managing static files. 管理静态文件的框架
     'django.contrib.humanize',
 
 ]
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'polls/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'polls/templates')],  # 模板所在文件夹
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,11 +120,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/polls/static/startbootstrap-clean-blog-gh-pages/'
+STATIC_URL = '/polls/static/startbootstrap-clean-blog-gh-pages/'  # 访问静态文件的URL
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "polls/static/startbootstrap-clean-blog-gh-pages"),
-]
+]  # 静态文件位置
 
 
 AUTH_USER_MODEL = 'polls.MyUser'
