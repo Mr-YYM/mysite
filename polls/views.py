@@ -16,4 +16,4 @@ def post(request):
 
 
 def contact(request):
-    return render(request, 'contact.html', {})
+    return render(request, 'sign_in.html', {})

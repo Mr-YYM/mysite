@@ -9,5 +9,5 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('about.html/', views.about, name="about"),
     path('post.html/', views.post, name="post"),
-    path('contact.html/', views.contact, name="contact"),
+    path('sign_in.html/', views.contact, name="contact"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
