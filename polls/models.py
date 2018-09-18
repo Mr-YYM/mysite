@@ -15,7 +15,6 @@ class Article(models.Model):
         Automatically set the field to now when the object is first created. Useful for creation of timestamps.
     """
     created_date = models.DateField(auto_now_add=True)
-
     modify_date = models.DateField(auto_now=True)
     content = models.TextField()
     is_show = models.BooleanField()
