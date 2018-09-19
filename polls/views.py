@@ -25,7 +25,9 @@ def contact(request):
 
 
 def signup(request):
+    # Returns the path, plus an appended query string, if applicable. Example: "/music/bands/the_beatles/?print=true"
     path = request.get_full_path()
+
     if request.method == 'POST':
         form = SignUpForm(data=request.POST, auto_id="%s")
         if form.is_valid():
@@ -37,7 +39,9 @@ def signup(request):
             user.save()
             auth_user = authenticate(username=username, password=password)
             auth_login(request, auth_user)
-            return redirect("home")
+            return redirect("index")
+        else:
+            print("666")
     else:
         form = SignUpForm(auto_id="%s")
     return render(request, 'sign_in.html', locals())
@@ -45,4 +49,4 @@ def signup(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('home')
+    return redirect('index')
