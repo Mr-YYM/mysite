@@ -55,7 +55,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
-              <h1>Sign in</h1>
+              <h1>Sign up</h1>
               <span class="subheading">Have questions? I have answers.</span>
             </div>
           </div>
@@ -67,7 +67,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Try to sign in an account</p>
+          <p>Try to sign up an account</p>
           <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
           <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
           <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
@@ -80,16 +80,30 @@
               </div>
             </div>
             <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Email Address</label>
+                <input type="email" class="form-control" name="email" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
               <div class="form-group col-xs-12 floating-label-form-group controls">
                 <label>Password</label>
                 <input type="password" class="form-control" name="password" placeholder="Password" id="password" required data-validation-required-message="Please enter a password.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" name="confirm_password" placeholder="Confirm_password" id="confirm_password" required data-validation-required-message="Please enter again the password.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
             <br>
             <div id="success"></div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" id="sendMessageButton">Sign in</button>
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Sign up</button>
             </div>
           </form>
         </div>

@@ -1,3 +1,4 @@
+from django.forms import Form
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth import get_user_model
@@ -21,6 +22,20 @@ def post(request):
 
 
 def contact(request):
+    return render(request, 'sign_up.html', {})
+
+
+def sign_in(request):
+    path = request.get_full_path()
+
+    if request.method == 'POST':
+        form = Form(data=request.POST, auto_id="%s")
+        username = form.data['username']
+        password = form.data['password']
+        auth_user = authenticate(username=username, password=password)
+        auth_login(request, auth_user)
+        return redirect("index")
+
     return render(request, 'sign_in.html', {})
 
 
@@ -44,7 +59,7 @@ def signup(request):
             print("666")
     else:
         form = SignUpForm(auto_id="%s")
-    return render(request, 'sign_in.html', locals())
+    return render(request, 'sign_up.html', locals())
 
 
 def logout_view(request):

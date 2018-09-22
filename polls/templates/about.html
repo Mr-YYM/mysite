@@ -14,17 +14,34 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+            {% if request.user.id %}
+            <li class="nav-item">
+              <a class="nav-link" href="/">{{ user.username }}</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="/">未登录</a>
+            </li>
+            {% endif %}
+
+
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/about.html">About</a>
-            </li>http://127.0.0.1:8000/contact.html
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="/post.html">Sample Post</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/sign_up.html">Sign Up</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/sign_in.html">Sign in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/sign_out">Sign out</a>
             </li>
           </ul>
         </div>
