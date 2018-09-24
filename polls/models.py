@@ -58,7 +58,6 @@ class MyUser(AbstractUser):
 # 这个类少了username, email，需要自己定制，直接拿源码会报错，username = AbstractUser.username,也会报错
 
 # class Myuser(AbstractBaseUser):
-    # objects = UserManager()
 
     # 要继承AbstractBaseUser, 一定要有两个属性：identifier、 USERNAME_FIELD
     # you model must be have a single unique field that can be used for identification purposes.
@@ -79,9 +78,6 @@ class MyUser(AbstractUser):
     #     },
     # )
 
-    # email = models.EmailField(_('email address'), blank=True)
-
-    # EMAIL_FIELD = 'email'
     #
     # class Meta(AbstractUser.Meta):
     #     db_table = 'Myuser'
@@ -99,13 +95,20 @@ class MyUser(AbstractUser):
 
 # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓继承AbstractUser↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 # 这个用户模型有多余的Field，重写直接赋值None，报错...
-
+# https://www.fomfus.com/articles/how-to-use-email-as-username-for-django-authentication-removing-the-username
+# 参考以上网站，问题应该出在usermanager没有做对应的custom
 # class Myuser(AbstractUser):
+    # objects = UserManager()
+
     # first_name = None
     # last_name = None
     # is_active = None
     # is_staff = None
     # is_superuser = None
+
+    # email = models.EmailField(_('email address'), blank=True)
+
+    # EMAIL_FIELD = 'email'
 
     # class Meta(AbstractUser.Meta):
     #     db_table = 'Myuser'

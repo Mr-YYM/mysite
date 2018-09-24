@@ -10,15 +10,16 @@
             {% if request.user.id %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="/">{{ user.username }}</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" style="font-size: 15px" href="/sign_out">Sign out</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="opacity: 0.85; border: transparent; margin: 0.2rem -8px" >
+                    <a class="dropdown-item" style="font-size: 15px;font-weight: bold;" href="/sign_out">Sign out</a>
                 </div>
             </li>
             {% else %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">未登录</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item col-lg-1" style="font-size: 15px;color:#fff;" href="/sign_in.html">Sign in</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="opacity: 0.85; border: transparent; margin: 0.2rem -8px">
+                    <a class="dropdown-item" style="font-size: 15px; font-weight: bold;" href="/sign_in.html">Sign in</a>
+                    <a class="dropdown-item" style="font-size: 15px; font-weight: bold;" href="/sign_up.html">Sign up</a>
                 </div>
             </li>
             {% endif %}
@@ -32,9 +33,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/post.html">Sample Post</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/sign_up.html">Sign Up</a>
             </li>
           </ul>
         </div>
